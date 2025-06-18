@@ -1,0 +1,118 @@
+:root {
+  --main-bg-color: #24383b;
+  --shadow-color: #707d7f;
+  --action-btn: #b58c88;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: whitesmoke;
+  margin: 50px 16vw;
+  font-family: "Rubik", "san-serif";
+}
+
+.hero {
+  display: flex;
+  gap: 2rem;
+}
+
+.introduction {
+  max-width: 60vw;
+}
+
+.introduction .light {
+  font-weight: lighter;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.introduction .strong {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.pastworks {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+}
+
+.profilepic {
+  max-width: 150px;
+  margin: auto;
+}
+
+.profilepic picture {
+  max-width: inherit;
+  border-radius: 5px;
+}
+.profilepic img {
+  max-width: inherit;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.work {
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px whitesmoke solid;
+  background-color: var(--shadow-color);
+}
+
+.work:hover {
+  scale: 1.05;
+  background-color: var(--action-btn);
+  box-shadow: 1px 1px 5px var(--shadow-color), -1px -1px 5px var(--shadow-color);
+}
+
+.work a {
+  text-decoration: none;
+  color: inherit;
+}
+.work h2 {
+  font-size: 1rem;
+}
+
+.work img {
+  max-width: 300px;
+}
+
+@media (max-width: 900px) {
+  body {
+    margin: min(100px, 10vw);
+  }
+
+  .introduction .strong {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: max(50px, 5vw);
+  }
+
+  .hero {
+    gap: 0;
+  }
+
+  .introduction {
+    max-width: none;
+  }
+
+  .introduction .strong {
+    font-size: 4rem;
+  }
+
+  .profilepic {
+    max-width: 100px;
+    margin: auto;
+    position: absolute;
+    right: 10%;
+    top: 95px;
+  }
+}
