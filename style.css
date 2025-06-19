@@ -4,13 +4,36 @@
   --action-btn: #b58c88;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 body {
   background-color: var(--main-bg-color);
   color: whitesmoke;
-  margin: 50px 16vw;
   font-family: "Rubik", "san-serif";
+  margin-bottom: 0;
+}
+footer {
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #83959d54;
 }
 
+footer i {
+  font-size: 2.5rem;
+  transition: font-size 100ms ease-in-out;
+}
+
+footer i:hover {
+  font-size: 2.8rem;
+}
+
+header {
+  margin: 50px 16vw;
+}
 .hero {
   display: flex;
   gap: 2rem;
@@ -32,17 +55,46 @@ body {
   margin: 0;
 }
 
+main {
+  padding: 50px 0;
+  margin: 50px 16vw;
+}
+
 .pastworks {
   display: flex;
   flex-wrap: wrap;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   justify-content: center;
+  animation: appear 1s ease-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
 }
 
 .profilepic {
   max-width: 150px;
   margin: auto;
+  animation: slide-in 500ms ease-in-out;
+  position: relative;
+}
+
+@keyframes slide-in {
+  0% {
+    right: -200px;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
 }
 
 .profilepic picture {
@@ -61,6 +113,7 @@ body {
   overflow: hidden;
   border: 1px whitesmoke solid;
   background-color: var(--shadow-color);
+  transition: scale ease-in-out 200ms;
 }
 
 .work:hover {
@@ -70,11 +123,20 @@ body {
 }
 
 .work a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration: underline 0.1em rgba(255, 255, 255, 0);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms ease-in-out,
+    text-underline-offset 300ms ease-in-out;
 }
+
+.work:hover a {
+  text-decoration-color: rgba(230, 230, 240, 0.733);
+  text-underline-offset: 0.4em;
+}
+
 .work h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .work img {
@@ -82,17 +144,23 @@ body {
 }
 
 @media (max-width: 900px) {
-  body {
+  header,
+  main {
     margin: min(100px, 10vw);
   }
 
   .introduction .strong {
     font-size: 5rem;
   }
+
+  footer {
+    margin: 0;
+  }
 }
 
 @media (max-width: 600px) {
-  body {
+  header,
+  main {
     margin: max(50px, 5vw);
   }
 
